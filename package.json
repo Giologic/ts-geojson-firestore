@@ -1,0 +1,49 @@
+{
+  "name": "ts-geojson-firestore",
+  "version": "1.0.0",
+  "description": "Firebase to geojson utility in TS",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "dev": "nodemon --exec ts-node ./src/index.ts",
+    "test": "jest --config jestconfig.json",
+    "build": "rimraf lib/ && tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepublishOnly": "npm test && npm run lint",
+    "prepare": "npm run build",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Giologic/ts-geojson-firestore.git"
+  },
+  "keywords": [
+    "geojson",
+    "firebase",
+    "firestore"
+  ],
+  "author": "Gio Velez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Giologic/ts-geojson-firestore/issues"
+  },
+  "homepage": "https://github.com/Giologic/ts-geojson-firestore.git",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/geojson": "^7946.0.7",
+    "@types/jest": "^26.0.0",
+    "jest": "^26.0.1",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.1.0",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.9.5"
+  },
+  "files": [
+    "lib/**/*"
+  ]
+}
